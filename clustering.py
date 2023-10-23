@@ -12,9 +12,9 @@ from sklearn.model_selection import GridSearchCV
 from sklearn.metrics import silhouette_score
 from sklearn.decomposition import PCA
 
-def preprocess_clustering_par_lignes(data):
+def preprocess_clustering(data, echelle):
     data_clustering = data[data['annee'] < 2023]
-    data_clustering = data_clustering.groupby('ligne').agg({'prct_cause_externe': 'mean',
+    data_clustering = data_clustering.groupby(echelle).agg({'prct_cause_externe': 'mean',
                                             'prct_cause_infra': 'mean',
                                             'prct_cause_gestion_trafic': 'mean',
                                             'prct_cause_materiel_roulant': 'mean',
