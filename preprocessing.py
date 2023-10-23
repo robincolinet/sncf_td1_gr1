@@ -7,12 +7,10 @@ def load_data():
     return data
 
 def preprocess_data(data):
-    df = pd.DataFrame(data)
-    # Interaction entre gares de départ et d'arrivée
-    df['ligne'] = df['gare_depart'] + "-" + df['gare_arrivee']
+    data['mois'], data['annee'] = data['date'].apply(lambda date: date.split('-')[1]),  data['date'].apply(lambda date: date.split('-')[0])
 
-    df['mois'] = df['date'].str.split('-').str[1]
-    df = df.drop(['date'])
+def creer_feature_ligne(df):
+    df['ligne'] = df['gare_depart'] + "-" + df['gare_arrivee']
 
 # One-Hot Encoding pour les colonnes catégorielles
 def encoding_data(data, features_to_encode):
