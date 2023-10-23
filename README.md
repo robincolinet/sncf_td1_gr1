@@ -19,3 +19,13 @@
    git clone https://github.com/robincolinet/sncf_td1_gr1.git
    ```
 2. Télécharger la data puis la placer sous le nom 'data.csv' à la racine du projet.
+
+## Fichiers
+
+Description succinte de l'organisation du projet:
+
+1. data_exploration.ipynb : visualisations préliminaires de la donnée de travail
+2. comparaison_encodings.ipynb : comparaisons des preprocessings/représentation des données
+3. comparaison_modèles_regression.ipynb : benchmark de plusieurs modèles de régression multivariée avec optimisation par Randomized Search
+4. moyennes_glissantes.ipynb : étude d'impact d'une prise en compte basique de la temporalité des données
+5. preprocessing.py, clustering.py : fichiers supports de fonctions
